@@ -18,10 +18,11 @@ void main() {
 
   GoogleMapsFlutterPlatform.instance.enableDebugInspection();
 
-
   testWidgets('testOnMapCreated', (WidgetTester tester) async {
     final Key key = GlobalKey();
     final Completer<bool> mapIdCompleter = Completer<bool>();
+
+    print("pumpWidget");
 
     await tester.pumpWidget(Directionality(
       textDirection: TextDirection.ltr,
@@ -36,6 +37,7 @@ void main() {
       ),
     ));
 
+    print("Wait for onMapCreated");
     expect(await mapIdCompleter.future, true);
   });
 }
