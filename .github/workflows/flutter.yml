@@ -26,7 +26,8 @@ jobs:
         timeout-minutes: 30
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          target: google_apis
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none 
           api-level: 29
           profile: "pixel"
           script: flutter test integration_test --verbose 
